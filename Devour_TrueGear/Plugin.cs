@@ -166,22 +166,6 @@ public class Plugin : BasePlugin
         Log.LogInfo(Vector3.Distance(__instance.transform.position, Camera.main.transform.position));
     }
 
-    //[HarmonyPostfix, HarmonyPatch(typeof(NolanBehaviour), "SetIsFlashlightActive")]
-    //private static void NolanBehaviour_SetIsFlashlightActive_Postfix(NolanBehaviour __instance, bool isActive, bool isSilent)
-    //{
-    //    if (Vector3.Distance(__instance.transform.position, Camera.main.transform.position) > 2f)
-    //    {
-    //        return;
-    //    }
-    //    Log.LogInfo("---------------------------------------------");
-    //    Log.LogInfo("FlashlightTrigger");
-    //    _TrueGear.Play("FlashlightTrigger");
-    //    Log.LogInfo(isActive);
-    //    Log.LogInfo(isSilent);
-    //    Log.LogInfo(__instance.name);
-    //    Log.LogInfo(Vector3.Distance(__instance.transform.position, Camera.main.transform.position));
-    //}
-
     [HarmonyPostfix, HarmonyPatch(typeof(NolanBehaviour), "ActivateCarryObject")]
     private static void NolanBehaviour_ActivateCarryObject_Postfix(NolanBehaviour __instance)
     {
